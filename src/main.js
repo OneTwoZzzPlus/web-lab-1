@@ -1,16 +1,25 @@
 import { cart } from "./cart.js";
 import { renderCatalog } from "./ui/catalog.js";
+import { renderCart, getCartTotal } from "./ui/cart.js";
 
-/* Initiate cart and catalog */
+/* Initiate catalog and cart */
 
 cart.load();
 
 const catalogList = document.querySelector("#catalog-list");
 catalogList.replaceWith(renderCatalog());
 
+const cartTotal = document.querySelector("#cart-total");
+const handleRenderCart = () => {
+    const cartList = document.querySelector("#cart-list");
+    cartList.replaceWith(renderCart());
+    cartTotal.textContent = `${getCartTotal()}`;
+};
+handleRenderCart();
+cart.subscribe(null, handleRenderCart);
+
 /* Rise to cart button */
 
-const cartSection = document.querySelector("#cart-section");
 const cartScrollButton = document.querySelector("#cart-scroll-button");
 
 cartScrollButton.addEventListener("click", () => {
