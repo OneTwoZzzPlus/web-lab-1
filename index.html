@@ -6,6 +6,7 @@
         <title>Магазин</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+        <script type="module" src="main.js"></script>
     </head>
     <body>
         <header>
@@ -173,11 +174,13 @@
                     <span>Итого</span>
                     <span>0</span> ₽
                 </div>
-                <button>Оформить заказ</button>
+                <button type="button" id="order-start-button">
+                    Оформить заказ
+                </button>
             </section>
         </main>
-        <div id="rise">
-            <button type="button">
+        <div id="cart-scroll">
+            <button type="button" id="cart-scroll-button">
                 <img
                     src="assets/basket.svg"
                     alt="Перейти к корзине"
@@ -188,7 +191,12 @@
         <div id="message-modal" class="modal">
             <div class="modal-container">
                 <h2>Сообщение</h2>
-                <button class="modal-close" type="button" aria-label="Закрыть">
+                <button
+                    id="message-close-button"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Закрыть"
+                >
                     ×
                 </button>
                 <p id="message-text">Заказ создан!</p>
@@ -197,7 +205,12 @@
         <div id="order-modal" class="modal">
             <div class="modal-container">
                 <h2>Оформление заказа</h2>
-                <button class="modal-close" type="button" aria-label="Закрыть">
+                <button
+                    id="order-close-button"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Закрыть"
+                >
                     ×
                 </button>
                 <form id="order-form">
@@ -222,10 +235,10 @@
                         />
                     </div>
                     <div>
-                        <label for="addess">Адрес доставки</label>
+                        <label for="address">Адрес доставки</label>
                         <input
-                            id="addess"
-                            name="addess"
+                            id="address"
+                            name="address"
                             type="text"
                             placeholder="Санкт-Петербург"
                             required

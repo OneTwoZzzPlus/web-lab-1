@@ -10,7 +10,7 @@ main {
     gap: 0 2rem;
 }
 
-#rise {
+#cart-scroll {
     display: none;
     position: fixed;
     bottom: 0.75rem;
@@ -24,7 +24,7 @@ main {
     #cart-section {
         order: -1;
     }
-    #rise {
+    #cart-scroll {
         display: flex;
     }
 }
