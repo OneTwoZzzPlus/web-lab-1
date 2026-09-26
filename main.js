@@ -1,3 +1,13 @@
+import { cart } from "./cart.js";
+import { renderCatalog } from "./ui/catalog.js";
+
+/* Initiate cart and catalog */
+
+cart.load();
+
+const catalogList = document.querySelector("#catalog-list");
+catalogList.replaceWith(renderCatalog());
+
 /* Rise to cart button */
 
 const cartSection = document.querySelector("#cart-section");

@@ -66,7 +66,7 @@ main {
     margin: 0;
 }
 
-#catalog-list > ul > li {
+#catalog-list > li {
     display: flex;
 }
 
