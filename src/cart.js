@@ -20,11 +20,22 @@ const commit = (product_id) => {
     general_listeners.forEach((handler) => handler(user_cart));
 };
 
+const set = (product_id, count) => {
+    if (cleanup(product_id)) return;
+    if (count < 1) delete user_cart[product_id];
+    else user_cart[product_id] = count;
+    commit(product_id);
+};
+
 export const cart = {
     load: () => {
         const str_cart = localStorage.getItem("shop:cart");
         if (str_cart) Object.assign(user_cart, JSON.parse(str_cart));
         return { ...user_cart };
+    },
+    clear: () => {
+        Object.keys(user_cart).forEach((key) => set(key, 0));
+        commit();
     },
     items: () => {
         return { ...user_cart };
@@ -37,15 +48,10 @@ export const cart = {
             general_listeners.push(handler);
         }
     },
+    set,
     get: (product_id) => {
         if (cleanup(product_id)) return;
         return user_cart[product_id] ? user_cart[product_id] : 0;
-    },
-    set: (product_id, count) => {
-        if (cleanup(product_id)) return;
-        if (count < 1) delete user_cart[product_id];
-        else user_cart[product_id] = count;
-        commit(product_id);
     },
     inc: (product_id) => {
         if (cleanup(product_id)) return;

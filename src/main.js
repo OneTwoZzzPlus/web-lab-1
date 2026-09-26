@@ -46,6 +46,7 @@ const handleOrderSubmit = (event) => {
 
     closeOrderModal();
     openMessageModal();
+    cart.clear();
 };
 
 const orderForm = document.querySelector("#order-form");
