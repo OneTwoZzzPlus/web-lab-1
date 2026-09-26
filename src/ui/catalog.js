@@ -1,5 +1,6 @@
 import { cart } from "../cart.js";
 import { products } from "../products.js";
+import { createPlus, createMinus } from "./assets.js";
 
 export const renderCatalog = () => {
     const wrapper = document.createElement("ul");
@@ -54,7 +55,7 @@ const renderProductCardCounter = (product_id, count) => {
         const incButton = document.createElement("button");
         incButton.type = "button";
         incButton.ariaLabel = "Добавить товар";
-        incButton.textContent = "+";
+        incButton.appendChild(createPlus());
         incButton.addEventListener("click", () => cart.inc(product_id));
         counter.appendChild(incButton);
 
@@ -65,7 +66,7 @@ const renderProductCardCounter = (product_id, count) => {
         const decButton = document.createElement("button");
         decButton.type = "button";
         decButton.ariaLabel = "Убрать товар";
-        decButton.textContent = "-";
+        decButton.appendChild(createMinus());
         decButton.addEventListener("click", () => cart.dec(product_id));
         counter.appendChild(decButton);
     }

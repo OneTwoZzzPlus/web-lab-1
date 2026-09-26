@@ -1,5 +1,6 @@
 import { cart } from "../cart.js";
 import { products } from "../products.js";
+import { createPlus, createMinus, createCross } from "./assets.js";
 
 export const getCartTotal = () => {
     let total = 0;
@@ -55,7 +56,7 @@ const renderCartProductCounter = (product_id, count) => {
     const incButton = document.createElement("button");
     incButton.type = "button";
     incButton.ariaLabel = "Добавить товар";
-    incButton.textContent = "+";
+    incButton.appendChild(createPlus());
     incButton.addEventListener("click", () => cart.inc(product_id));
     counter.appendChild(incButton);
 
@@ -66,7 +67,7 @@ const renderCartProductCounter = (product_id, count) => {
     const decButton = document.createElement("button");
     decButton.type = "button";
     decButton.ariaLabel = "Убрать товар";
-    decButton.textContent = "-";
+    decButton.appendChild(createMinus());
     decButton.addEventListener("click", () => cart.dec(product_id));
     if (count === 1) decButton.disabled = true;
     counter.appendChild(decButton);
@@ -74,7 +75,7 @@ const renderCartProductCounter = (product_id, count) => {
     const clearButton = document.createElement("button");
     clearButton.type = "button";
     clearButton.ariaLabel = "Удалить";
-    clearButton.textContent = "×";
+    clearButton.appendChild(createCross());
     clearButton.addEventListener("click", () => cart.set(product_id, 0));
     counter.appendChild(clearButton);
 
