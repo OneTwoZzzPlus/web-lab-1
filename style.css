@@ -6,7 +6,7 @@
 
 main {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 1fr 300px;
     gap: 0 2rem;
 }
 

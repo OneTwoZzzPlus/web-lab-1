@@ -20,6 +20,7 @@ cart.subscribe(null, handleRenderCart);
 
 /* Rise to cart button */
 
+const cartSection = document.querySelector("#cart-section");
 const cartScrollButton = document.querySelector("#cart-scroll-button");
 
 cartScrollButton.addEventListener("click", () => {

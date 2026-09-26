@@ -18,7 +18,7 @@ const renderProductCard = (product_id) => {
 
     const product = products[product_id];
     const img = document.createElement("img");
-    img.src = product.image || "assets/basket.svg";
+    img.src = product.image || "assets/box.svg";
     img.alt = product.name || "Название товара";
     wrapper.appendChild(img);
     const name = document.createElement("h4");
