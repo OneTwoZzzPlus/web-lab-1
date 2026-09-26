@@ -52,23 +52,24 @@ export const renderCartProduct = (product_id) => {
 const renderCartProductCounter = (product_id, count) => {
     const counter = document.createElement("span");
 
-    const addButton = document.createElement("button");
-    addButton.type = "button";
-    addButton.ariaLabel = "Добавить товар";
-    addButton.textContent = "+";
-    addButton.addEventListener("click", () => cart.inc(product_id));
-    counter.appendChild(addButton);
+    const incButton = document.createElement("button");
+    incButton.type = "button";
+    incButton.ariaLabel = "Добавить товар";
+    incButton.textContent = "+";
+    incButton.addEventListener("click", () => cart.inc(product_id));
+    counter.appendChild(incButton);
 
     const countLabel = document.createElement("span");
     countLabel.textContent = `${count}`;
     counter.appendChild(countLabel);
 
-    const removeButton = document.createElement("button");
-    removeButton.type = "button";
-    removeButton.ariaLabel = "Убрать товар";
-    removeButton.textContent = "-";
-    removeButton.addEventListener("click", () => cart.dec(product_id));
-    counter.appendChild(removeButton);
+    const decButton = document.createElement("button");
+    decButton.type = "button";
+    decButton.ariaLabel = "Убрать товар";
+    decButton.textContent = "-";
+    decButton.addEventListener("click", () => cart.dec(product_id));
+    if (count === 1) decButton.disabled = true;
+    counter.appendChild(decButton);
 
     const clearButton = document.createElement("button");
     clearButton.type = "button";

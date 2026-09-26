@@ -2,22 +2,6 @@ import { cart } from "./cart.js";
 import { renderCatalog } from "./ui/catalog.js";
 import { renderCart, getCartTotal } from "./ui/cart.js";
 
-/* Initiate catalog and cart */
-
-cart.load();
-
-const catalogList = document.querySelector("#catalog-list");
-catalogList.replaceWith(renderCatalog());
-
-const cartTotal = document.querySelector("#cart-total");
-const handleRenderCart = () => {
-    const cartList = document.querySelector("#cart-list");
-    cartList.replaceWith(renderCart());
-    cartTotal.textContent = `${getCartTotal()}`;
-};
-handleRenderCart();
-cart.subscribe(null, handleRenderCart);
-
 /* Rise to cart button */
 
 const cartSection = document.querySelector("#cart-section");
@@ -66,3 +50,21 @@ const handleOrderSubmit = (event) => {
 
 const orderForm = document.querySelector("#order-form");
 orderForm.addEventListener("submit", handleOrderSubmit);
+
+/* Initiate catalog and cart */
+
+cart.load();
+
+const catalogList = document.querySelector("#catalog-list");
+catalogList.replaceWith(renderCatalog());
+
+const cartTotal = document.querySelector("#cart-total");
+const handleRenderCart = () => {
+    const cartList = document.querySelector("#cart-list");
+    cartList.replaceWith(renderCart());
+    const total = getCartTotal();
+    cartTotal.textContent = `${getCartTotal()}`;
+    orderStartButton.disabled = total === 0;
+};
+handleRenderCart();
+cart.subscribe(null, handleRenderCart);
