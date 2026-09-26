@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Магазин</title>
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    </head>
+    <body>
+        <header>
+            <h1>Магазин</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Каталог</h2>
+                <ul id="catalog-list">
+                    <li>
+                        <article>
+                            <img
+                                src="assets/basket.svg"
+                                alt="Название товара"
+                                style="height: 64px"
+                            />
+                            <h3>Название товара</h3>
+                            <p><span>0</span> ₽</p>
+                            <div>
+                                <button type="button">
+                                    Добавить в корзину
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" aria-label="Удалить">
+                                    X
+                                </button>
+                                <button type="button" aria-label="Убрать один">
+                                    -
+                                </button>
+                                <span>0</span>
+                                <button
+                                    type="button"
+                                    aria-label="Добавить один"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Корзина</h2>
+                <span>Корзина пуста</span>
+                <ul id="cart-list">
+                    <li>
+                        <div>
+                            <span>Название товара</span>
+                            <span>0</span> ₽
+                        </div>
+                        <div>
+                            <button type="button" aria-label="Удалить">
+                                ×
+                            </button>
+                            <button type="button" aria-label="Убрать один">
+                                -
+                            </button>
+                            <span>0</span>
+                            <button type="button" aria-label="Добавить один">
+                                +
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <span>Итого</span>
+                    <span>0</span> ₽
+                </div>
+                <button>Оформить заказ</button>
+            </section>
+        </main>
+        <div id="order-modal" class="modal">
+            <form id="order-form">
+                <div>
+                    <label for="first-name">Имя</label>
+                    <input
+                        id="first-name"
+                        name="first-name"
+                        type="text"
+                        placeholder="Иван"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="second-name">Фамилия</label>
+                    <input
+                        id="second-name"
+                        name="second-name"
+                        type="text"
+                        placeholder="Иванов"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="addess">Адрес доставки</label>
+                    <input
+                        id="addess"
+                        name="addess"
+                        type="text"
+                        placeholder="Санкт-Петербург"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="phone">Контактный номер телефона</label>
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+7 (999) 123-45-67"
+                        required
+                    />
+                </div>
+                <button type="submit">Создать заказ</button>
+            </form>
+        </div>
+        <div id="message-modal" class="modal">
+            <p>Заказ создан!</p>
+        </div>
+    </body>
+</html>
