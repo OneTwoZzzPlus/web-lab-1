@@ -50,6 +50,27 @@ ul {
     list-style: none;
 }
 
+input {
+    padding: var(--spacing-sm);
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--color-background);
+    color: var(--color-text);
+    width: 100%;
+}
+
+input:hover {
+    border-color: var(--color-primary-hover);
+}
+
+input:disabled {
+    border-color: var(--color-hover);
+}
+
+input:invalid {
+    border-color: var(--color-secondary);
+}
+
 button {
     padding: var(--spacing-sm);
     border: var(--border);
@@ -168,6 +189,10 @@ main > section > h2 {
     border-radius: var(--radius);
     background: white;
     box-shadow: var(--shadow);
+}
+
+#order-form > button {
+    margin-top: var(--spacing-sm);
 }
 
 /* CART */
