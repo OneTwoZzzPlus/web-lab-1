@@ -17,7 +17,7 @@ export const renderCart = () => {
     if (Object.keys(items).length === 0) {
         const wrapper = document.createElement("p");
         wrapper.id = "cart-list";
-        wrapper.textContent = "Ничего не добавлено";
+        wrapper.textContent = "В корзине пусто";
         return wrapper;
     }
 
@@ -36,6 +36,7 @@ export const renderCartProduct = (product_id) => {
     const element = document.createElement("li");
 
     const rule = document.createElement("div");
+    rule.classList.add("rule");
     const name = document.createElement("span");
     name.textContent = product.name || "Название товара";
     rule.appendChild(name);
@@ -44,6 +45,7 @@ export const renderCartProduct = (product_id) => {
     element.appendChild(rule);
 
     const summary = document.createElement("div");
+    summary.classList.add("summary");
     summary.textContent = `${product.price}₽ × ${count}шт. = ${product.price * count} ₽`;
     element.appendChild(summary);
 
@@ -61,9 +63,9 @@ const renderCartProductCounter = (product_id, count) => {
     incButton.addEventListener("click", () => cart.inc(product_id));
     counter.appendChild(incButton);
 
-    const countLabel = document.createElement("span");
-    countLabel.textContent = `${count}`;
-    counter.appendChild(countLabel);
+    // const countLabel = document.createElement("span");
+    // countLabel.textContent = `${count}`;
+    // counter.appendChild(countLabel);
 
     const decButton = document.createElement("button");
     decButton.type = "button";
@@ -74,6 +76,7 @@ const renderCartProductCounter = (product_id, count) => {
     counter.appendChild(decButton);
 
     const clearButton = document.createElement("button");
+    clearButton.classList.add("remove");
     clearButton.type = "button";
     clearButton.ariaLabel = "Удалить";
     clearButton.appendChild(createCross());

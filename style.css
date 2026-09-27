@@ -36,9 +36,12 @@ body {
 h1,
 h2,
 h3,
-h4,
-p {
+h4 {
     margin: 0;
+}
+
+p {
+    margin: var(--spacing-sm) 0;
 }
 
 ul {
@@ -208,15 +211,9 @@ main > section > h2 {
     object-fit: cover;
 }
 
-.product > p {
-    padding: var(--spacing-xs) 0;
-}
-
 .product > h4 {
     line-height: normal;
 }
-
-/* COUNTER */
 
 .product .counter {
     display: flex;
@@ -225,9 +222,42 @@ main > section > h2 {
     justify-content: space-between;
 }
 
+/* CART */
+
+#cart-list > li {
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-text);
+    margin: var(--spacing-sm);
+}
+
+.rule {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.summary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#total {
+    text-align: center;
+}
+
+p#cart-list {
+    text-align: center;
+}
+
+/* COUNTER */
+
 .counter > button {
     line-height: 0;
     background-color: var(--color-background);
+}
+
+.counter > button.remove {
+    border-color: var(--color-secondary);
 }
 
 .counter > button:hover {
@@ -235,6 +265,9 @@ main > section > h2 {
 }
 
 .counter > button:disabled {
-    background-color: var(--color-hover);
     border-color: var(--color-hover);
+}
+
+.counter > button:disabled:hover {
+    background-color: var(--color-background);
 }
