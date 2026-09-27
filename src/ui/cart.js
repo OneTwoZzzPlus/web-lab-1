@@ -52,6 +52,7 @@ export const renderCartProduct = (product_id) => {
 
 const renderCartProductCounter = (product_id, count) => {
     const counter = document.createElement("span");
+    counter.classList.add("counter");
 
     const incButton = document.createElement("button");
     incButton.type = "button";

@@ -11,13 +11,16 @@
     --color-background: #fff;
     --color-bg-common: #f5f7fa;
     --color-hover: #ccc;
-    --color-primary: #f00;
+    --color-primary: #00ac50;
+    --color-primary-hover: #009b48;
+    --color-secondary: #ff3333;
 
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
+    --border: 2px solid var(--color-primary);
     --radius: 0.5rem;
     --shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
@@ -32,15 +35,7 @@ body {
 
 h1,
 h2,
-h3 {
-    margin: 0;
-    padding-left: var(--spacing-sm);
-}
-
-h2 {
-    margin: var(--spacing-sm) 0;
-}
-
+h3,
 h4,
 p {
     margin: 0;
@@ -52,6 +47,28 @@ ul {
     list-style: none;
 }
 
+button {
+    padding: var(--spacing-sm);
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: var(--color-background);
+}
+
+button:hover {
+    border-color: var(--color-primary-hover);
+    background: var(--color-primary-hover);
+}
+
+button:disabled {
+    border-color: var(--color-hover);
+    background: var(--color-hover);
+}
+
+button.full {
+    width: 100%;
+}
+
 /* MAIN */
 
 header {
@@ -60,10 +77,20 @@ header {
     border-radius: 0 0 var(--radius) var(--radius);
 }
 
+header > h1 {
+    color: var(--color-primary);
+    padding-left: var(--spacing-sm);
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 0 var(--spacing-md);
+}
+
+main > section > h2 {
+    padding-left: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
 }
 
 #main-nav {
@@ -152,7 +179,7 @@ main {
 
 #catalog-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing-sm);
 
     list-style: none;
@@ -175,8 +202,39 @@ main {
     background: var(--color-background);
 }
 
-.product img {
+.product > img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+}
+
+.product > p {
+    padding: var(--spacing-xs) 0;
+}
+
+.product > h4 {
+    line-height: normal;
+}
+
+/* COUNTER */
+
+.product .counter {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.counter > button {
+    line-height: 0;
+    background-color: var(--color-background);
+}
+
+.counter > button:hover {
+    background-color: var(--color-hover);
+}
+
+.counter > button:disabled {
+    background-color: var(--color-hover);
+    border-color: var(--color-hover);
 }

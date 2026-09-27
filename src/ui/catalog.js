@@ -46,12 +46,15 @@ const renderProductCardCounter = (product_id, count) => {
     const counter = document.createElement("div");
     if (count === 0) {
         const addButton = document.createElement("button");
+        addButton.classList.add("full");
         addButton.type = "button";
         addButton.ariaLabel = "Добавить товар";
         addButton.textContent = "Добавить в корзину";
         addButton.addEventListener("click", () => cart.inc(product_id));
         counter.appendChild(addButton);
     } else {
+        counter.classList.add("counter");
+
         const incButton = document.createElement("button");
         incButton.type = "button";
         incButton.ariaLabel = "Добавить товар";

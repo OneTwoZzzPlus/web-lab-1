@@ -32,6 +32,9 @@ const closeMessageModal = () => messageModal.classList.remove("open");
 const messageCloseButton = document.querySelector("#message-close-button");
 messageCloseButton.addEventListener("click", closeMessageModal);
 
+const messageOkButton = document.querySelector("#message-ok-button");
+messageOkButton.addEventListener("click", closeMessageModal);
+
 /* Order actions */
 
 const handleOrderStart = () => {
