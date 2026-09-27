@@ -4,11 +4,11 @@ import { renderCart, getCartTotal } from "./ui/cart.js";
 
 /* Rise to cart button */
 
-const cartSection = document.querySelector("#cart-section");
-const cartScrollButton = document.querySelector("#cart-scroll-button");
+const scrollTarget = document.querySelector("body");
+const cartScrollButton = document.querySelector("#main-nav-cart");
 
 cartScrollButton.addEventListener("click", () => {
-    cartSection.scrollIntoView({
+    scrollTarget.scrollIntoView({
         behavior: "smooth",
         block: "start",
     });

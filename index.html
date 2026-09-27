@@ -19,25 +19,23 @@
             </section>
             <section id="cart-section">
                 <h2>Корзина</h2>
-                <p id="cart-list">Ничего не добавлено</p>
-                <p>
-                    <span>Итого</span>
-                    <span id="cart-total">0</span> ₽
-                </p>
-                <button type="button" id="order-start-button">
-                    Оформить заказ
-                </button>
+                <div id="cart-wrapper">
+                    <p id="cart-list">Ничего не добавлено</p>
+                    <p>
+                        <span>Итого</span>
+                        <span id="cart-total">0</span> ₽
+                    </p>
+                    <button type="button" id="order-start-button">
+                        Оформить заказ
+                    </button>
+                </div>
             </section>
         </main>
-        <div id="cart-scroll">
-            <button type="button" id="cart-scroll-button">
-                <img
-                    src="assets/box.svg"
-                    alt="Перейти к корзине"
-                    style="height: 1rem"
-                />
+        <nav id="main-nav">
+            <button type="button" id="main-nav-cart">
+                <img src="assets/basket.svg" alt="Перейти к корзине" />
             </button>
-        </div>
+        </nav>
         <div id="message-modal" class="modal">
             <div class="modal-container">
                 <h2>Сообщение</h2>
@@ -47,7 +45,7 @@
                     type="button"
                     aria-label="Закрыть"
                 >
-                    ×
+                    <img src="assets/cross.svg" alt="Закрыть" />
                 </button>
                 <p id="message-text">Заказ создан!</p>
             </div>
@@ -61,7 +59,7 @@
                     type="button"
                     aria-label="Закрыть"
                 >
-                    ×
+                    <img src="assets/cross.svg" alt="Закрыть" />
                 </button>
                 <form id="order-form">
                     <div>
