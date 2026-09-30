@@ -45,4 +45,29 @@ export const products = {
         price: 399,
         image: "public/rasberry_pico.png",
     },
+    11: {
+        name: "Дисплей LCD1602 I2C",
+        price: 149,
+        image: "public/lcd_1602.png",
+    },
+    12: {
+        name: "Дисплей TM1637",
+        price: 127,
+        image: "public/tm1637.png",
+    },
+    13: {
+        name: "LED Matrix MAX7219",
+        price: 116,
+        image: "public/max7219.png",
+    },
+    14: {
+        name: "Датчик BME280 (температура, влажность и давление)",
+        price: 379,
+        image: "public/bme280.png",
+    },
+    15: {
+        name: "Датчик DHT22 (температура и влажность)",
+        price: 134,
+        image: "public/dth22.png",
+    },
 };
