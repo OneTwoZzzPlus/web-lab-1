@@ -1,18 +1,38 @@
 export const products = {
     1: {
-        name: "Arduino Nano 3.0 Mini (ATMEGA328PB)",
+        name: "Arduino Uno (ATmega328)",
+        price: 390,
+        image: "public/arduino_uno.png",
+    },
+    2: {
+        name: "Arduino Nano (ATmega328PB)",
         price: 186,
         image: "public/arduino_nano.png",
     },
-    2: {
+    3: {
+        name: "Arduino Leonardo R3 (ATmega32U4)",
+        price: 412,
+        image: "public/arduino_leonardo.png",
+    },
+    4: {
+        name: "Arduino Pro Micro (ATmega32U4)",
+        price: 272,
+        image: "public/arduino_micro.png",
+    },
+    5: { name: "ESP32 S3", price: 528, image: "public/esp32_s3.png" },
+    6: {
         name: "WeMos D1 Mini (ESP8266)",
         price: 165,
         image: "public/wemos_mini.png",
     },
-    3: { name: "Название товара", price: 100, image: "assets/box.svg" },
-    4: { name: "Название товара", price: 1000, image: "assets/box.svg" },
-    5: { name: "Название товара", price: 5, image: "assets/box.svg" },
-    6: { name: "Название товара", price: 50, image: "assets/box.svg" },
-    7: { name: "Название товара", price: 500, image: "assets/box.svg" },
-    8: { name: "Название товара", price: 5000, image: "assets/box.svg" },
+    7: {
+        name: "Arduino Mega (ATmega2560) ",
+        price: 770,
+        image: "public/arduino_mega.png",
+    },
+    8: {
+        name: "Arduino DUE (AT91SAM3X8E)",
+        price: 839,
+        image: "public/arduino_due.png",
+    },
 };
