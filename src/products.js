@@ -1,6 +1,14 @@
 export const products = {
-    1: { name: "Название товара", price: 1, image: "assets/box.svg" },
-    2: { name: "Название товара", price: 10, image: "assets/box.svg" },
+    1: {
+        name: "Arduino Nano 3.0 Mini (ATMEGA328PB)",
+        price: 186,
+        image: "public/arduino_nano.png",
+    },
+    2: {
+        name: "WeMos D1 Mini (ESP8266)",
+        price: 165,
+        image: "public/wemos_mini.png",
+    },
     3: { name: "Название товара", price: 100, image: "assets/box.svg" },
     4: { name: "Название товара", price: 1000, image: "assets/box.svg" },
     5: { name: "Название товара", price: 5, image: "assets/box.svg" },

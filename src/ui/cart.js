@@ -35,14 +35,12 @@ export const renderCartProduct = (product_id) => {
 
     const element = document.createElement("li");
 
-    const rule = document.createElement("div");
-    rule.classList.add("rule");
-    const name = document.createElement("span");
+    const name = document.createElement("div");
     name.textContent = product.name || "Название товара";
-    rule.appendChild(name);
+    element.appendChild(name);
+
     const counter = renderCartProductCounter(product_id, count);
-    rule.appendChild(counter);
-    element.appendChild(rule);
+    element.appendChild(counter);
 
     const summary = document.createElement("div");
     summary.classList.add("summary");
@@ -53,19 +51,8 @@ export const renderCartProduct = (product_id) => {
 };
 
 const renderCartProductCounter = (product_id, count) => {
-    const counter = document.createElement("span");
+    const counter = document.createElement("div");
     counter.classList.add("counter");
-
-    const incButton = document.createElement("button");
-    incButton.type = "button";
-    incButton.ariaLabel = "Добавить товар";
-    incButton.appendChild(createPlus());
-    incButton.addEventListener("click", () => cart.inc(product_id));
-    counter.appendChild(incButton);
-
-    // const countLabel = document.createElement("span");
-    // countLabel.textContent = `${count}`;
-    // counter.appendChild(countLabel);
 
     const decButton = document.createElement("button");
     decButton.type = "button";
@@ -74,6 +61,17 @@ const renderCartProductCounter = (product_id, count) => {
     decButton.addEventListener("click", () => cart.dec(product_id));
     if (count === 1) decButton.disabled = true;
     counter.appendChild(decButton);
+
+    const countLabel = document.createElement("span");
+    countLabel.textContent = `${count}`;
+    counter.appendChild(countLabel);
+
+    const incButton = document.createElement("button");
+    incButton.type = "button";
+    incButton.ariaLabel = "Добавить товар";
+    incButton.appendChild(createPlus());
+    incButton.addEventListener("click", () => cart.inc(product_id));
+    counter.appendChild(incButton);
 
     const clearButton = document.createElement("button");
     clearButton.classList.add("remove");

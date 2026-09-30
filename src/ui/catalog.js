@@ -55,23 +55,23 @@ const renderProductCardCounter = (product_id, count) => {
     } else {
         counter.classList.add("counter");
 
-        const incButton = document.createElement("button");
-        incButton.type = "button";
-        incButton.ariaLabel = "Добавить товар";
-        incButton.appendChild(createPlus());
-        incButton.addEventListener("click", () => cart.inc(product_id));
-        counter.appendChild(incButton);
-
-        const countLabel = document.createElement("span");
-        countLabel.textContent = `${count}`;
-        counter.appendChild(countLabel);
-
         const decButton = document.createElement("button");
         decButton.type = "button";
         decButton.ariaLabel = "Убрать товар";
         decButton.appendChild(createMinus());
         decButton.addEventListener("click", () => cart.dec(product_id));
         counter.appendChild(decButton);
+
+        const countLabel = document.createElement("span");
+        countLabel.textContent = `${count}`;
+        counter.appendChild(countLabel);
+
+        const incButton = document.createElement("button");
+        incButton.type = "button";
+        incButton.ariaLabel = "Добавить товар";
+        incButton.appendChild(createPlus());
+        incButton.addEventListener("click", () => cart.inc(product_id));
+        counter.appendChild(incButton);
     }
 
     return counter;

@@ -255,10 +255,16 @@ main > section > h2 {
     margin: var(--spacing-sm);
 }
 
-.rule {
+#cart-list .counter {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+}
+
+#cart-list .counter > span {
+    min-width: 2ch;
+    text-align: center;
 }
 
 .summary {
