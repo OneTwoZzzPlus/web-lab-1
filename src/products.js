@@ -35,4 +35,14 @@ export const products = {
         price: 839,
         image: "public/arduino_due.png",
     },
+    9: {
+        name: "Raspberry Pi",
+        price: 4779,
+        image: "public/rasberry_pi.png",
+    },
+    10: {
+        name: "Raspberry Pi Pico",
+        price: 399,
+        image: "public/rasberry_pico.png",
+    },
 };

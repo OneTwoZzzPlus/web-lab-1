@@ -207,12 +207,24 @@ main > section > h2 {
 
 #catalog-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-sm);
 
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+@media (max-width: 1440px) {
+    #catalog-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    #catalog-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
 
 #catalog-list > li {
